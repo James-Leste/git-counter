@@ -2,7 +2,7 @@
 
 ## Intro
 
-@git-counter is a self-used tool that records and analyzes all the Git commands you have run on your machine and provides a rank list
+@git-counter is a self-used tool that records and analyzes all the Git commands you have run on your machine and generates data insight.
 
 ## Ask yourself before using git-counter
 
