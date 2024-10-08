@@ -24,10 +24,10 @@ ignore_file="./.counterignore"
 if [[ -f "$ignore_file" ]]; then
   # Read the ignored keywords into an array
   IFS=$'\n' read -d '' -r -a ignored_keywords < "$ignore_file"
-else
-  # If the file doesn't exist, exit with an error
-  echo "Error: .counterignore file not found at $ignore_file"
-  exit 1
+# else
+#   # If the file doesn't exist, exit with an error
+#   echo "Error: .counterignore file not found at $ignore_file"
+#   exit 1
 fi
 
 is_ignored_command() {
@@ -50,7 +50,7 @@ else
     # If the exit status is 0 (success), log the command
     #echo $exit_status
     if [ $exit_status -eq 0 ]; then
-        echo "$(date) git $@" >> ./frequency.log
+        echo "$(date) git $@" >> /Users/jamesroot/gitcounter/frequency.log
     else
         echo "git-logger: The git command failed and will not be logged"
     fi
