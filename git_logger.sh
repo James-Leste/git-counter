@@ -54,8 +54,5 @@ else
     else
         echo "git-logger: The git command failed and will not be logged"
     fi
-    
-    
-
     exit $exit_status
 fi
