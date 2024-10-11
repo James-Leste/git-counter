@@ -19,7 +19,7 @@
 #     exit $exit_status
 # fi
 
-ignore_file="./.counterignore"
+ignore_file="/Users/jamesroot/gitcounter/.counterignore"
 
 if [[ -f "$ignore_file" ]]; then
   # Read the ignored keywords into an array
