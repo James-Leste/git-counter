@@ -1,5 +1,7 @@
 import pandas as pd
 from datetime import datetime
+from collections import Counter
+import matplotlib.pyplot as plt
 import re
 
 def parse_log_line(line):
@@ -25,8 +27,39 @@ def analyze_git_log(log_data):
     
     return df
 
-log_data = open('frequency.log', 'r').read()
+def generateInsight(file):
+    # Initialize a Counter to store command frequencies
+    command_counter = Counter()
 
-# Analyze the log data
-result_df = analyze_git_log(log_data)
-print(result_df)
+    # Regular expression pattern to match git commands
+    command_pattern = r'git\s+([a-zA-Z\-]+)'
+
+    # Read the log file
+    with open(file, 'r') as f:
+        for line in f:
+            match = re.search(command_pattern, line)
+            if match:
+                command = match.group(1)
+                command_counter[command] += 1
+
+    # Extract the commands and their frequencies
+    commands = list(command_counter.keys())
+    frequencies = list(command_counter.values())
+
+    # Generate the bar chart
+    plt.figure(figsize=(10, 6))
+    plt.barh(commands, frequencies, color='skyblue')
+    plt.xlabel('Frequency')
+    plt.ylabel('Git Command')
+    plt.title('Frequency of Git Commands')
+    plt.tight_layout()
+
+    # Save the chart as insight.png
+    plt.savefig('./output/insight.png')
+
+# log_data = open('frequency.log', 'r').read()
+
+# # Analyze the log data
+# result_df = analyze_git_log(log_data)
+# print(result_df)
+generateInsight('./frequency.log')
