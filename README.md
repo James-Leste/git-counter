@@ -14,4 +14,20 @@ If you answered 'yes' in one of the questions, git-counter is a good tool for yo
 
 ## Usage
 
-Todo
+Add the following alias to `.bashrc` or `.zshrc` and `source .zshrc`
+
+```shell
+alias git='/Location/Of/Script/git_logger.sh'
+```
+
+Give `git-logger.sh` executable permission
+
+```shell
+sudo chmod 765 git-logger.sh
+```
+
+Run `git-logger.sh`
+
+```shell
+git-logger.sh
+```
