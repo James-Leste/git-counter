@@ -31,3 +31,7 @@ Run `git-logger.sh`
 ```shell
 git-logger.sh
 ```
+
+## Example output report
+
+![alt](output/insight.png)
