@@ -28,10 +28,16 @@ sudo chmod 765 git-logger.sh
 
 Run `git-logger.sh`
 
-```shell
-git-logger.sh
+```python
+# Just type any git commands and they will be recorded
+```
+
+Run analysis
+
+```python
+python analysis.py
 ```
 
 ## Example output report
 
-![alt](output/insight.png)
+![alt](example/insight.png)
